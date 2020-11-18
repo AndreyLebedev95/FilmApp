@@ -4,3 +4,4 @@ declare module '*.scss' {
     };
     export = content;
 }
+declare var __PUBLIC_PATH__: string;

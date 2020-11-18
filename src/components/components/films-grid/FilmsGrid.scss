@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     grid-gap: 20px;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   &__pagination {
     margin-top: 30px;

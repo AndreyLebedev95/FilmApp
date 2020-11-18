@@ -1,5 +1,8 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
+const publicPath = '/';
 
 module.exports = {
     devtool: 'source-map',
@@ -40,7 +43,7 @@ module.exports = {
         ]
     },
     output: {
-        publicPath: '/',
+        publicPath,
         filename: '[name].[contenthash].js'
     },
     plugins: [
@@ -49,6 +52,9 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html'
+        }),
+        new webpack.DefinePlugin({
+            __PUBLIC_PATH__: JSON.stringify(publicPath)
         })
     ],
     optimization: {
