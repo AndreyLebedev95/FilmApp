@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styles from './MainLayout.scss';
 import {Header, Footer} from '../../components';
 
-export const MainLayout: React.SFC<{}> = ({children}) => (
+export const MainLayout: FC<{}> = ({children}) => (
     <div className={styles['main-layout']}>
         <Header />
         <div className={styles['main-layout__content']}>
