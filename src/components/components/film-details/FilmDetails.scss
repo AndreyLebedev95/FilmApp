@@ -1,0 +1,74 @@
+@import '../../../styles/constants';
+@import '../../../styles/mixins';
+
+.film-details {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: $title-color;
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__poster {
+    margin-right: 40px;
+    flex: 1 1 250px;
+    
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    &--img {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  &__original-title {
+    font-size: 14px;
+    color: $secondary-color;
+    margin-bottom: 15px;
+  }
+
+  &__info {
+    flex: 3 2 300px;
+  }
+
+  &__about-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 16px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  &__about-line {
+    display: flex;
+    border-bottom: 1px solid $main-color;
+    padding: 10px 0;
+    font-size: 14px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__about-key {
+    width: 160px;
+  }
+
+  &__about-value {
+
+  }
+
+
+}

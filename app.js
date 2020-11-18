@@ -1,8 +1,14 @@
-var express = require('express');
-var path = require('path');
-var app = express();
+const express = require('express');
+const path = require('path');
+const app = express();
 
-app.use(express.static(path.join(__dirname, "/dist")));
+const distPath = path.join(__dirname, '/dist');
+
+app.use(express.static(distPath));
+
+app.use(function(req, res, next) {
+    res.sendFile(path.join(distPath, '/index.html'));
+});
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');

@@ -1,0 +1,1 @@
+export {SearchFilmsLayout} from './SearchFilmsLayout';

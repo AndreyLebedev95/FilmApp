@@ -39,6 +39,9 @@ module.exports = {
             }
         ]
     },
+    output: {
+        publicPath: "/"
+    },
     plugins: [
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns: ['!index.html']

@@ -1,0 +1,1 @@
+export {TopFilmsLayout} from './TopFilmsLayout';

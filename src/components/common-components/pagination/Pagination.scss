@@ -1,0 +1,77 @@
+@import '../../../styles/constants';
+@import '../../../styles/mixins';
+
+$page-without-border-size: 34px;
+$page-without-border-size-mobile: 24px;
+$page-border-size: 1px;
+$active-page-color: #0d92ff;
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  color: $main-color;
+
+  &__element,
+  &__prev,
+  &__next {
+    cursor: pointer;
+    display: inline-block;
+    font-size: $page-without-border-size / 2;
+    text-align: center;
+    line-height: $page-without-border-size;
+    width: $page-without-border-size;
+    height: $page-without-border-size;
+    border: $page-border-size solid $main-color;
+    border-radius: 50%;
+    margin-left: 10px;
+
+    @include mobile {
+      font-size: $page-without-border-size-mobile / 2;
+      line-height: $page-without-border-size-mobile;
+      width: $page-without-border-size-mobile;
+      height: $page-without-border-size-mobile;
+      margin-left: 8px;
+    }
+  }
+  &__element--active,
+  &__element:hover,
+  &__prev:hover,
+  &__next:hover {
+    background-color: $main-color;
+    color: $complementary-color;
+  }
+  &__prev,
+  &__next {
+    width: $page-without-border-size - 3;
+    padding-left: 3px;
+    height: $page-without-border-size - 1;
+    padding-top: 1px;
+
+    @include mobile {
+      width: $page-without-border-size-mobile - 2;
+      padding-left: 2px;
+      height: $page-without-border-size-mobile;
+    }
+  }
+  &__element {
+    &--disabled {
+      pointer-events: none;
+    }
+  }
+  &__prev {
+    transform: rotate(180deg);
+    margin-left: 0;
+  }
+  &__break {
+    font-size: 24px;
+    margin-left: 10px;
+    pointer-events: none;
+
+    @include mobile {
+      font-size: 18px;
+      margin-left: 8px;
+    }
+  }
+}

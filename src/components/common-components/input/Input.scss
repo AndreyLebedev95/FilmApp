@@ -1,0 +1,15 @@
+@import '../../../styles/constants';
+@import '../../../styles/mixins';
+
+.input {
+  background: transparent;
+  font-size: 18px;
+  height: 30px;
+  color: $complementary-color;
+  box-sizing: border-box;
+  width: 250px;
+
+  @include mobile {
+    width: 150px;
+  }
+}

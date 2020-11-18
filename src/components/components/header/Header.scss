@@ -1,0 +1,24 @@
+@import '../../../styles/constants';
+
+.header {
+  height: $header-height;
+
+  &__logo {
+    color: $complementary-color;
+    font-size: 24px;
+  }
+  &__content {
+    height: $header-height;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: $main-color;
+    padding: 0 15px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  }
+}
