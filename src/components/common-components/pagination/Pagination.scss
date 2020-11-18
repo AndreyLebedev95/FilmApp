@@ -46,8 +46,6 @@ $active-page-color: #0d92ff;
   &__next {
     width: $page-without-border-size - 3;
     padding-left: 3px;
-    height: $page-without-border-size - 1;
-    padding-top: 1px;
 
     @include mobile {
       width: $page-without-border-size-mobile - 2;
