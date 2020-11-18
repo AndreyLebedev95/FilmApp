@@ -2,9 +2,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
-    devtool: "source-map",
+    devtool: 'source-map',
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
     module: {
         rules: [
@@ -13,14 +13,14 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "ts-loader"
+                        loader: 'ts-loader'
                     }
                 ]
             },
             {
-                enforce: "pre",
+                enforce: 'pre',
                 test: /\.js$/,
-                loader: "source-map-loader"
+                loader: 'source-map-loader'
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -30,7 +30,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: {
-                                localIdentName: "[local]___[hash:base64:5]"
+                                localIdentName: '[local]___[hash:base64:5]'
                             }
                         }
                     },
@@ -40,14 +40,20 @@ module.exports = {
         ]
     },
     output: {
-        publicPath: "/"
+        publicPath: '/',
+        filename: '[name].[contenthash].js'
     },
     plugins: [
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns: ['!index.html']
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: './src/index.html'
         })
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    }
 };
